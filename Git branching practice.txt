@@ -1,0 +1,399 @@
+(base) Chiuchou@Joes-MBP Desktop % cd Practice 
+
+(base) Chiuchou@Joes-MBP Practice % echo "# This is a practice demo." >> README.md
+
+(base) Chiuchou@Joes-MBP Practice % git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /Users/Chiuchou/Desktop/Practice/.git/
+
+(base) Chiuchou@Joes-MBP Practice % git add README.md
+
+(base) Chiuchou@Joes-MBP Practice % git commit -m "first commit adding the readme file"
+[master (root-commit) 4180478] first commit adding the readme file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+(base) Chiuchou@Joes-MBP Practice % git branch -M main
+
+(base) Chiuchou@Joes-MBP Practice % git remote add origin git@github.com:JiuzhouHao/Practice.git
+
+(base) Chiuchou@Joes-MBP Practice % git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 251 bytes | 251.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:JiuzhouHao/Practice.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+(base) Chiuchou@Joes-MBP Practice % git branch 
+* main
+
+(base) Chiuchou@Joes-MBP Practice % touch demonotes.txt
+
+(base) Chiuchou@Joes-MBP Practice % code .
+
+(base) Chiuchou@Joes-MBP Practice % git status 
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	demonotes.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+(base) Chiuchou@Joes-MBP Practice % git add .
+
+(base) Chiuchou@Joes-MBP Practice % git commit -m "add instructions from the main"
+[main 609e30e] add instructions from the main
+ 1 file changed, 9 insertions(+)
+ create mode 100644 demonotes.txt
+
+(base) Chiuchou@Joes-MBP Practice % git checkout -b pets
+Switched to a new branch 'pets'
+
+(base) Chiuchou@Joes-MBP Practice % git checkout -b non-pets
+Switched to a new branch 'non-pets'
+
+(base) Chiuchou@Joes-MBP Practice % git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+(base) Chiuchou@Joes-MBP Practice % git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+(base) Chiuchou@Joes-MBP Practice % git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 505 bytes | 505.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:JiuzhouHao/Practice.git
+   4180478..609e30e  main -> main
+
+(base) Chiuchou@Joes-MBP Practice % git checkout pets
+Switched to branch 'pets'
+
+(base) Chiuchou@Joes-MBP Practice % touch pets.txt
+
+(base) Chiuchou@Joes-MBP Practice % code .
+
+(base) Chiuchou@Joes-MBP Practice % git status
+On branch pets
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	pets.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+(base) Chiuchou@Joes-MBP Practice % git add .
+
+(base) Chiuchou@Joes-MBP Practice % git commit -m "add pets.txt"
+[pets eda4db5] add pets.txt
+ 1 file changed, 4 insertions(+)
+ create mode 100644 pets.txt
+
+(base) Chiuchou@Joes-MBP Practice % git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+(base) Chiuchou@Joes-MBP Practice % git checkout pets
+Switched to branch 'pets'
+
+(base) Chiuchou@Joes-MBP Practice % git push     
+fatal: The current branch pets has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin pets
+
+(base) Chiuchou@Joes-MBP Practice % git push origin pets
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 337 bytes | 337.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'pets' on GitHub by visiting:
+remote:      https://github.com/JiuzhouHao/Practice/pull/new/pets
+remote: 
+To github.com:JiuzhouHao/Practice.git
+ * [new branch]      pets -> pets
+
+(base) Chiuchou@Joes-MBP Practice % git merge pets main
+Already up to date.
+
+(base) Chiuchou@Joes-MBP Practice % git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+(base) Chiuchou@Joes-MBP Practice % git checkout pets  
+Switched to branch 'pets'
+
+(base) Chiuchou@Joes-MBP Practice % git merge main pets
+Already up to date.
+
+(base) Chiuchou@Joes-MBP Practice % git checkout main  
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+(base) Chiuchou@Joes-MBP Practice % git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+(base) Chiuchou@Joes-MBP Practice % git merge pets
+Updating 609e30e..eda4db5
+Fast-forward
+ pets.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 pets.txt
+
+(base) Chiuchou@Joes-MBP Practice % git push     
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:JiuzhouHao/Practice.git
+   609e30e..eda4db5  main -> main
+
+(base) Chiuchou@Joes-MBP Practice % git branch -d pets
+Deleted branch pets (was eda4db5).
+
+(base) Chiuchou@Joes-MBP Practice % git push origin :pets
+To github.com:JiuzhouHao/Practice.git
+ - [deleted]         pets
+
+(base) Chiuchou@Joes-MBP Practice % git branch
+* main
+  non-pets
+
+(base) Chiuchou@Joes-MBP Practice % git checkout non-pets
+Switched to branch 'non-pets'
+
+(base) Chiuchou@Joes-MBP Practice % touch non-pets.txt
+
+(base) Chiuchou@Joes-MBP Practice % code .
+
+(base) Chiuchou@Joes-MBP Practice % git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> non-pets
+
+
+(base) Chiuchou@Joes-MBP Practice % git pull main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+(base) Chiuchou@Joes-MBP Practice % git merge main
+Updating 609e30e..eda4db5
+Fast-forward
+ pets.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 pets.txt
+
+(base) Chiuchou@Joes-MBP Practice % git status
+On branch non-pets
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	non-pets.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+(base) Chiuchou@Joes-MBP Practice % git add .
+
+(base) Chiuchou@Joes-MBP Practice % git commit -m "add non-pet.txt"
+[non-pets db48678] add non-pet.txt
+ 1 file changed, 3 insertions(+)
+ create mode 100644 non-pets.txt
+
+(base) Chiuchou@Joes-MBP Practice % git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+(base) Chiuchou@Joes-MBP Practice % git merge non-pets
+Updating eda4db5..db48678
+Fast-forward
+ non-pets.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 non-pets.txt
+
+(base) Chiuchou@Joes-MBP Practice % git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+(base) Chiuchou@Joes-MBP Practice % git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 292 bytes | 292.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:JiuzhouHao/Practice.git
+   eda4db5..db48678  main -> main
+
+(base) Chiuchou@Joes-MBP Practice % git branch -d non-pets
+Deleted branch non-pets (was db48678).
+
+(base) Chiuchou@Joes-MBP Practice % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   demonotes.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+(base) Chiuchou@Joes-MBP Practice % git add .
+
+(base) Chiuchou@Joes-MBP Practice % git commit -m "Add info on what to do next, i.e., merge conflict practice"
+[main 29c41b2] Add info on what to do next, i.e., merge conflict practice
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+(base) Chiuchou@Joes-MBP Practice % git push 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 444 bytes | 444.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:JiuzhouHao/Practice.git
+   db48678..29c41b2  main -> main
+
+(base) Chiuchou@Joes-MBP Practice % touch names.txt
+
+(base) Chiuchou@Joes-MBP Practice % git branch joe
+
+(base) Chiuchou@Joes-MBP Practice % git branch chi
+
+(base) Chiuchou@Joes-MBP Practice % git checkout joe
+Switched to branch 'joe'
+
+(base) Chiuchou@Joes-MBP Practice % code .
+
+(base) Chiuchou@Joes-MBP Practice % git add .
+
+(base) Chiuchou@Joes-MBP Practice % git commit -m "Added three names"
+[joe 9a6fb9b] Added three names
+ 1 file changed, 3 insertions(+)
+ create mode 100644 names.txt
+
+(base) Chiuchou@Joes-MBP Practice % git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+(base) Chiuchou@Joes-MBP Practice % git checkout chi
+Switched to branch 'chi'
+
+(base) Chiuchou@Joes-MBP Practice % git merge joe
+Updating 29c41b2..9a6fb9b
+Fast-forward
+ names.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 names.txt
+
+(base) Chiuchou@Joes-MBP Practice % git add .
+
+(base) Chiuchou@Joes-MBP Practice % git commit -m "added two names"
+[chi 08a52f3] added two names
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+(base) Chiuchou@Joes-MBP Practice % git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+(base) Chiuchou@Joes-MBP Practice % git merge joe
+Updating 29c41b2..9a6fb9b
+Fast-forward
+ names.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 names.txt
+
+(base) Chiuchou@Joes-MBP Practice % git merge chi
+Updating 9a6fb9b..08a52f3
+Fast-forward
+ names.txt | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+(base) Chiuchou@Joes-MBP Practice % git merge joe
+Already up to date.
+
+(base) Chiuchou@Joes-MBP Practice % git checkout joe
+Switched to branch 'joe'
+
+(base) Chiuchou@Joes-MBP Practice % git add .
+
+(base) Chiuchou@Joes-MBP Practice % git commit -m "try again"
+[joe 977c55d] try again
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+(base) Chiuchou@Joes-MBP Practice % git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+(base) Chiuchou@Joes-MBP Practice % git merge joe
+Auto-merging names.txt
+CONFLICT (content): Merge conflict in names.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+(base) Chiuchou@Joes-MBP Practice % code names.txt
+
+(base) Chiuchou@Joes-MBP Practice % git commit -m "resolve conflicts"
+U	names.txt
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+(base) Chiuchou@Joes-MBP Practice % git add .
+
+(base) Chiuchou@Joes-MBP Practice % git commit -m "resolve conflicts"
+[main a746a04] resolve conflicts
+
+(base) Chiuchou@Joes-MBP Practice % git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 1.04 KiB | 1.04 MiB/s, done.
+Total 12 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 1 local object.
+To github.com:JiuzhouHao/Practice.git
+   29c41b2..a746a04  main -> main
+
+(base) Chiuchou@Joes-MBP Practice % git branch -d joe chi
+Deleted branch joe (was 977c55d).
+Deleted branch chi (was 08a52f3).
+
+(base) Chiuchou@Joes-MBP Practice % git branch
+* main
+
