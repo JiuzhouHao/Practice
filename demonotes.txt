@@ -7,3 +7,6 @@ Secondly, we will create a branch named pets in which we add a txt file listing
 animals that are pets.
 
 Then, another branch named non-pets for a txt file listing animals that are non-pets.
+
+So now we have all the files and all the branches apart from the main are deleted.
+We will now start to have two branches working on the same file so as to see merge conflicts.
