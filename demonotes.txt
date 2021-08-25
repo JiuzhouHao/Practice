@@ -1,0 +1,9 @@
+In this demo, we will illustrate how to use git branching, i.e., work with different 
+branches, push, pull and merge. 
+
+Firstly, the main is the branch that we only use to document things.
+
+Secondly, we will create a branch named pets in which we add a txt file listing
+animals that are pets.
+
+Then, another branch named non-pets for a txt file listing animals that are non-pets.
